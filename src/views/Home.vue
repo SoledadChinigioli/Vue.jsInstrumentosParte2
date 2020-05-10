@@ -1,18 +1,20 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <strong><h1 style = "font-family:Comic Sans">MUSICAL HENDRIX</h1></strong>
+
+    <h4>Musical Hendrix es una tienda de instrumentos musicales con ya más de 15 años de experiencia.</h4>
+    <h4>Tenemos el conocimiento y la capacidad como para informarte acerca de las mejores elecciones para tu compra musical. </h4>
+  <br /><br />
+   <img :src="'/images/musica.png'">
+    <br /><br /><br />
+    <b-button href='/producto' variant='dark'>IR A PRODUCTOS</b-button>
   </div>
 </template>
-
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+<style>
+.home {
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
-</script>
+</style>
