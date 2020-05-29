@@ -20,6 +20,8 @@
 // @ is an alias to /src
 import Instrumento from '@/components/Instrumento.vue'
 
+const URL = 'http://localhost:9000/api/v1/instrumentoApiWeb';
+
 export default {
   name: 'Producto',
   components: {
@@ -35,10 +37,13 @@ export default {
   },
   methods: {
     async getInstrumentos () {
-      const res = await fetch('/instrumentos.json')
-      const resJson = await res.json()
-      this.instrumentosData = resJson.instrumentos
+      const res = await fetch(URL +'/');
+      const resJson = await res.json();
+      console.log(resJson);
+      this.instrumentosData = resJson;
     }
-  }
+  
+   
+    }
 }
 </script>

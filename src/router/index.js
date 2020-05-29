@@ -24,6 +24,17 @@ Vue.use(VueRouter)
     component: () => import('../views/Producto.vue')
   },
   {
+    path: '/editFormulario/:id',
+    name: 'editFormulario',
+    component: () => import('../views/EditFormulario.vue')
+  },
+  {
+    path: '/formulario',
+    name: 'formulario',
+    component: () => import('../views/Formulario.vue')
+  },
+
+  {
     path: '/destino',
     name: 'destino',
     component: () => import('../views/Destino.vue')

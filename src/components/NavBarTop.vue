@@ -8,7 +8,8 @@
       <b-navbar-nav>
         <b-nav-item href="/">Home</b-nav-item>
         <b-nav-item href="/producto">Productos</b-nav-item>
-        <li class="nav-item">
+        <b-nav-item href="/formulario">Agregar Instrumento</b-nav-item>
+         <li class="nav-item">
           <router-link to="/destino" class="nav-link">¿Dónde estamos?</router-link>
         </li>
       </b-navbar-nav>

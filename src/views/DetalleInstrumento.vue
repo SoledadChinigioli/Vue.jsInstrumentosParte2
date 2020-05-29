@@ -4,7 +4,7 @@
         <b-row>
           <b-col> <img
             style='max-height:400px'
-            :src="'/images/' + instrumentoEncontrado.imagen"
+            :src="require('D:/Sole/Documents/workspace-sts-3.9.8.RELEASE/backInstrumentos/TP2REACT/backInstrumentos/target/classes/images/' + instrumentoEncontrado.imagen)"
         /><br /><br />
          <b-row>
             <b-col
@@ -18,7 +18,7 @@
           </b-row>
             <b-row>
             <b-col
-              ><h1><strong>{{ instrumentoEncontrado.nombre }}</strong></h1></b-col>
+              ><h1><strong>{{ instrumentoEncontrado.instrumento }}</strong></h1></b-col>
           </b-row>
            <b-row>
             <b-col
@@ -55,7 +55,10 @@
 </template>
 
 <script>
+
+const URL = 'http://localhost:9000/api/v1/instrumentoApiWeb';
 export default {
+  
     name: 'DetalleInstrumento',
     components: {},
     mounted () {
@@ -68,15 +71,13 @@ export default {
     },
     methods: {
         async getInstrumentoXId () {
+          debugger;
             const parametroId = this.$route.params.id
-            const res = await fetch('/instrumentos.json')
-            const resJson = await res.json()
-            console.log(resJson)
-            this.instrumentoEncontrado = await resJson.instrumentos.find(
-                instrumento => instrumento.id === parametroId
-            )
-            console.log(this.instrumentoEncontrado)
-        }
+            const res = await fetch(URL + '/'+ parametroId);
+            const resJson = await res.json();
+            this.instrumentoEncontrado = await resJson;
+            console.log(resJson);
     }
+}
 }
 </script>>
